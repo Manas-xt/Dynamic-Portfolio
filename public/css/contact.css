@@ -64,6 +64,7 @@ body{
 }
 .main-c .submit{
     width: 100px;
+    height: 40px;
     padding: 0px;
     background-image: linear-gradient(to left, #fdfcfb 0%, #e2d1c3 100%);
     border-radius: 20px;
