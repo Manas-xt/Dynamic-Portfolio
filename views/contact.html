@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact me</title>
+    <link rel="stylesheet" href="/css/contact.css">
+    <link rel="icon" type="icon" href="/assets/favicon.ico">
+</head>
+<body>
+    
+    <div class="heading">
+       <span>
+        <h1>Contact me :</h1>
+        </span>
+    </div>
+    <div class="contact">
+        <div class="main-c box1">
+            <form id="contact-form">
+                <label for="Name">NAME :</label>
+                <br>
+                <input type="text" id="Name" name="name" placeholder="Your Name..." required>
+                <br><br>
+                <label for="email">E-MAIL :</label>
+                <br>
+                <input type="email" id="email" name="email" placeholder="E-mail..." required>
+                <BR><br>
+                <label for="subject">SUBJECT :</label>
+                <br>
+                <textarea id="subject" name="subject" placeholder="Subject..." required></textarea>
+                <br><br>
+                <label for="message">MESSAGE :</label>
+                <br>
+                <textarea id="message" name="message" placeholder="Message..." required></textarea>
+                <br><br>
+                <button type="submit" class="submit">SUBMIT</button>
+            </form>
+        </div>
+        <div class="main-c box2">
+            <h1>Manas Kumar</h1>
+            <span>Devpeloper/Student</span>
+            <Br><br>
+            <h2>contact No.</h2>
+            <span>9257793866</span>
+            <br><br>
+            <h2>E-mail</h2>
+            <span>manas2325k@gamil.com</span>
+            <br><br>
+            <h2>Website</h2>
+            <span>www.manaskumar.me</span>
+            <br><br>
+            <span class="icon">
+                <a href="https://www.instagram.com/manas_xt/"> <img src="assest/instagram.png"> </a>
+                <a href="https://www.linkedin.com/in/manas-kumar-b23388300?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"> <img src="assest/linkedin.png"> </a>
+                <a href="https://wa.me/+919257793866"> <img src="assest/whatsapp.png"> </a>
+                <a href=" https://x.com/@___Manas____"> <img src="assest/twitter.png"> </a>
+            </span>
+            <br>
+            <span>© Copyright and Developed by Manas Kumar</span>
+        </div>
+    </div>
+    <br>
+    <br>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactForm = document.getElementById('contact-form');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+
+                    const formData = new FormData(contactForm);
+                    const formObject = Object.fromEntries(formData.entries());
+
+                    try {
+                        const response = await fetch('/submit-contact', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(formObject),
+                        });
+
+                        const result = await response.json();
+
+                        if (response.ok) {
+                            alert(result.message);
+                            contactForm.reset();
+                        } else {
+                            throw new Error(result.message);
+                        }
+                    } catch (error) {
+                        console.error('Error:', error);
+                        alert('An error occurred while submitting the form. Please try again.');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

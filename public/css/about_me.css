@@ -1,0 +1,78 @@
+body{
+    background-color: black;
+}
+@media(max-width:767px){
+    #heading{
+        padding-bottom: 40px;
+    }
+}
+#hello:hover{
+    transform: scale(1.03);
+    transition: all .2s ease-in-out;
+}
+#sec:hover{
+    transform: scale(1.03);
+    transition: all .2s ease-in-out;
+}
+#third:hover{
+    transform: scale(1.03);
+    transition: all .2s ease-in-out;
+}
+#four:hover{
+    transform: scale(1.03);
+    transition: all .2s ease-in-out;
+}
+#five:hover{
+    transform: scale(1.03);
+    transition: all .2s ease-in-out;
+}
+@media(max-width:447px){
+    #contact{
+        margin-top: 5px;
+    }
+}
+@media(max-width:1023px){
+    #button{
+        margin-top: 20px;
+        
+    }
+}
+.skills h1, .skillsh1{
+    /* background-color: aqua; */
+    font-size:40px;
+    text-align: center;
+    color: aliceblue;
+    margin-top: 50px;
+
+}
+#img1{
+    
+    margin-top: 70px;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    gap: 50px;
+}
+#img1 img{
+    width: 80px;
+    
+}
+#img1 svg{
+    width: 80px;
+    
+}
+#img1 img:hover{
+    transform: scale(1.1);
+    transition: all .2s ease-in-out;
+}
+#img1 svg:hover{
+    transform: scale(1.1);
+    transition: all .2s ease-in-out;
+}
+.education{
+    height: 200px;
+}

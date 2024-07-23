@@ -1,0 +1,109 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: black;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.heading{
+    color: rgb(255, 255, 255);
+    height: 150px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.heading h1{
+    margin-top: 6px;
+}
+.heading span{
+    background-color:black;
+    height: 60px;
+    width: 250px;
+    text-align: center;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: aliceblue;
+    border-width: 3px;
+}
+.contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+.main-c{
+    flex: 0 0 500px;
+    color: aliceblue;
+    /* background-color: rgb(0, 0, 0); */
+    padding: 40px;
+    height: 100%;
+    width: 100px;
+    border-width: 5px;
+    border-style:solid;
+    border-radius: 50px;
+}
+.main-c input{
+    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+    height: 40px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    padding:0px 0px 0px 15px;
+}
+.main-c .submit:hover{
+    background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+}
+.main-c input::placeholder{
+    color: black;
+}
+.main-c .submit{
+    width: 100px;
+    padding: 0px;
+    background-image: linear-gradient(to left, #fdfcfb 0%, #e2d1c3 100%);
+    border-radius: 20px;
+}
+
+.main-c textarea{
+    width: 100%;
+    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+    padding:10px 0px 0px 10px;
+    height: 100px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+.main-c textarea::placeholder{
+    color: black;
+}
+.icon img{
+    width: 40px;
+    margin: 5px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+.box2{
+    transform: translateY(-88px);
+}
+@media(max-width:1220px){
+    .main-c{
+        flex: 0 0 250px;
+    }
+}
+.icon a{
+    text-decoration: none;
+}
+@media(max-width:1222px){
+    .box2{
+        transform: translateY(-77px);
+    }
+}
+ @media(max-width:720px){
+        .box2{
+            transform: translateY(0px);
+        }
+    }
