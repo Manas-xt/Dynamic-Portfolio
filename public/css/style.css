@@ -35,3 +35,15 @@ body{
     40%, 60% { content: '..'; }
     80%, 100% { content: '...'; }
   }
+
+  #dp{
+    border-radius: 100px;
+    width: 450px;
+    margin-left: 50px;
+  }
+
+  @media(max-width: 1023px){
+    #dp{
+        margin-left: 0px;
+    }
+  }
