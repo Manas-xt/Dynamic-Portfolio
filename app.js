@@ -9,12 +9,15 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log('Connected to MongoDB'))
-.catch((err) => console.error('Error connecting to MongoDB:', err));
+const uri = process.env.MONGODB_URI;
+if (!uri) {
+    console.error('MongoDB URI is not defined in environment variables');
+    process.exit(1);
+}
+
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('Connected to MongoDB'))
+    .catch(err => console.error('Error connecting to MongoDB:', err));
 
 // Middleware
 app.use(express.static(path.join(__dirname, 'public')));
